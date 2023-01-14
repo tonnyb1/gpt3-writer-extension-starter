@@ -11,7 +11,9 @@ const getKey = () => {
 
 const sendMessage = (content) => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        console.log("this1",chrome.tabs)
       const activeTab = tabs[0].id;
+      console.log("this2",activeTab)
   
       chrome.tabs.sendMessage(
         activeTab,
