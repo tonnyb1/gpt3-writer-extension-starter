@@ -28,11 +28,16 @@ const insert = (content) => {
   });
 }
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(
+
+  (request, sender, sendResponse) => {
     if (request.message === 'inject') {
       const { content } = request;
 
       const result = insert(content);
+
+      console.log('request', request);
+      console.log('result', result);
   
       if (!result) {
         sendResponse({ status: 'failed' });
