@@ -46,3 +46,22 @@ chrome.runtime.onMessage.addListener(
       sendResponse({ status: 'success' });
     }
 });
+
+// chrome.runtime.onMessage.addListener(
+
+//   (request, sender, sendResponse) => {
+//     if (request.message === 'inject') {
+//       const { content } = request;
+
+//       const result = insert(content);
+
+//       console.log('request', request);
+//       console.log('result', result);
+  
+//       if (!result) {
+//         sendResponse({ status: 'failed' });
+//       }
+  
+//       sendResponse({ status: 'success' });
+//     }
+// });
